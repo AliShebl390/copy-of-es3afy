@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Font Awsome library -->
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://kit.fontawesome.com/869711923d.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500&family=Work+Sans:wght@200;300;400;500;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Es3afy</title>
+    <link rel="stylesheet" href="/css/stylesheet.css" />
+    <link rel="stylesheet" href="/css/media.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div class="burger-menu-container" id="lines-container">
+      <div class="line line1" id="bar1"></div>
+      <div class="line line2" id="bar2"></div>
+      <div class="line line3" id="bar3"></div>
+    </div>
+    <div class="nav">
+      <ol>
+        <a href="completed-requests.html">history</a>
+        <a href="contact-us.html">contact us</a>
+        <a href="../sign-in.html">log out</a>
+      </ol>
+    </div>
+
+    <div class="background"></div>
+
+    <div class="paramedic-home-header">
+      <label class="switch red">
+        <input id="myCheck" type="checkbox" onclick="myFunction()" /><i></i>
+      </label>
+
+      <p id="text">offline</p>
+
+      <img class="paramedic-img" src="/images/person.jpg" alt="" />
+    </div>
+    <div id="map"></div>
+
+    <div class="request-section">
+      <div class="request-section1">
+        <img class="user-img" src="/images/person.jpg" alt="" />
+        <h2>cillian Murphy</h2>
+      </div>
+
+      <div class="request-section2">
+        <i class="fas fa-location"></i>
+        <div class="paragraph-wrapper">
+          <h4>pickup point</h4>
+          <h5>adderss example</h5>
+        </div>
+      </div>
+      <div class="request-section2">
+        <i class="fas fa-location"></i>
+        <div class="paragraph-wrapper">
+          <h4>Destination</h4>
+          <h5>adderss example</h5>
+        </div>
+      </div>
+
+      <div class="request-section3">
+        <button class="button-custom">decline</button>
+        <button class="button-custom">accept</button>
+      </div>
+    </div>
+
+    <div class="arrived">
+      <div class="arrived-section1">
+        <img class="user-img" src="/images/person.jpg" alt="" />
+
+        <h2>cillian Murphy</h2>
+      </div>
+      <div class="arrived-section2"></div>
+      <button class="button-custom">arrived</button>
+    </div>
+
+    <script
+      async
+      src="https://maps.googleapis.com/maps/api/js?AIzaSyB0GIMWRrw47lHDp8WX1W9_g-3b3-r6xs8&callback=initMap"
+    ></script>
+    <script src="/js/paramedic.js"></script>
+  </body>
+</html>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Font Awsome library -->
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <script src="https://kit.fontawesome.com/869711923d.js" crossorigin="anonymous"></script>  
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500&family=Work+Sans:wght@200;300;400;500;700;800&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Es3afy</title>
+    <link rel="stylesheet" href="css/stylesheet.css">
+    <link rel="stylesheet" href="css/media.css">
+</head>
+<body>   
+    <nav>
+        <i class="fas fa-home home-icon"></i>
+        <i class="fas fa-user-plus add-icon"></i>
+        <a href="/History-main.html"><i class="fas fa-history history-icon"></i></a>   
+    </nav>
+    <div class="upper-nav">
+        <div class="search-container">
+        <input class="search-input" type="search" placeholder="search">
+        <i class="fas fa-search search-icon"></i>
+    </div>
+        <div class="name-example">
+            <div class="admin-pic"></div>
+            <p class="name">harvey specter</p>
+            <i class="fas fa-angle-down down"></i>
+        </div>
+    </div>
+    <div class="container-2">  
+        <table class="list" id="employeeList">
+            <th>Full Name</th>
+            <th>Mobile</th>
+            <th>ID</th>  
+            <th>Email</th>
+            <th>status</th>
+            <th>Operations</th>
+        </table>
+    </div>
+    <div class="overlay">
+        <div class="container-1">
+            <i class="fas fa-times close-icon"></i>
+            <form onsubmit="event.preventDefault();onFormSubmit();" autocomplete="off">
+            <input type="text" name="name" id="name" placeholder="name">
+            <input type="text" name="mobile" id="mobile" placeholder="mobile">
+            <input type="text" name="id" id="id" placeholder="id">
+            <input type="text" name="email" id="email" placeholder="email">
+            <input type="text" name="status" id="status" placeholder="status">
+            <div  class="submit-container">
+                <input type="submit" value="Submit" class="submit-btn" id="submit-btn">
+                </div>
+            </form>
+        </div>
+    </div>
+    <script>
+        var selectedRow = null;
+    function onFormSubmit() {
+            var formData = readFormData();
+            if (selectedRow == null)
+                insertNewRecord(formData);
+            else
+                updateRecord(formData);
+            resetForm();
+    }
+    function readFormData() {
+        var formData = {};
+        formData["name"] = document.getElementById("name").value;
+        formData["mobile"] = document.getElementById("mobile").value;
+        formData["id"] = document.getElementById("id").value;
+        formData["email"] = document.getElementById("email").value;
+        formData["status"] = document.getElementById("status").value;
+        return formData;
+    }
+    function insertNewRecord(data) {
+        var table = document.getElementById("employeeList");
+        var newRow = table.insertRow(table.length);
+        let cell1 = newRow.insertCell(0);
+        cell1.innerHTML = data.name;
+        let cell2 = newRow.insertCell(1);
+        cell2.innerHTML = data.mobile;
+        let cell3 = newRow.insertCell(2);
+        cell3.innerHTML = data.id;
+        let cell4 = newRow.insertCell(3);
+        cell4.innerHTML = data.email;
+        let cell5 = newRow.insertCell(4);
+        cell5.innerHTML = data.status;
+        cell5 = newRow.insertCell(5);
+        cell5.innerHTML = `<i onClick="onEdit(this); show()" class="fas fa-edit edit-icon"></i>
+        <i  onClick="onDelete(this)" class="fas fa-trash delete-icon"></i>`;
+    }
+    function resetForm() {
+        document.getElementById("name").value = "";
+        document.getElementById("mobile").value = "";
+        document.getElementById("id").value = "";
+        document.getElementById("email").value = "";
+        document.getElementById("status").value = "";
+        selectedRow = null;
+    }
+    function onEdit(td) {
+        selectedRow = td.parentElement.parentElement;
+        document.getElementById("name").value = selectedRow.cells[0].innerHTML;
+        document.getElementById("mobile").value = selectedRow.cells[1].innerHTML;
+        document.getElementById("id").value = selectedRow.cells[2].innerHTML;
+        document.getElementById("email").value = selectedRow.cells[3].innerHTML;
+        document.getElementById("status").value = selectedRow.cells[4].innerHTML;
+    }
+    function updateRecord(formData) {
+        selectedRow.cells[0].innerHTML = formData.name;
+        selectedRow.cells[1].innerHTML = formData.mobile;
+        selectedRow.cells[2].innerHTML = formData.id;
+        selectedRow.cells[3].innerHTML = formData.email;
+        selectedRow.cells[4].innerHTML = formData.status;
+    }
+    function onDelete(td) {
+        if (confirm('Are you sure to delete this record ?')) {
+            row = td.parentElement.parentElement;
+            document.getElementById("employeeList").deleteRow(row.rowIndex);
+            resetForm();
+        }
+    }
+    const closeIcon =document.querySelector('.close-icon');
+    const addIcon = document.querySelector('.add-icon')
+    const submitBtn = document.querySelector('.submit-btn')
+    const overlay =document.querySelector('.overlay');
+    closeIcon.addEventListener('click',function(){
+        overlay.style.display="none";
+    })
+    addIcon.addEventListener('click',function(){
+        overlay.style.display="block";
+    })
+    submitBtn.addEventListener('click',function(){
+        overlay.style.display="none";
+    })
+    function show(){
+        overlay.style.display="block";
+    }
+    const searchIcon = document.querySelector('.search-icon')
+    const searchInput = document.querySelector('.search-input')
+    const searchContainer= document.querySelector('.search-container')
+    searchIcon.addEventListener('click',function(){
+    searchContainer.classList.toggle('show')
+    searchInput.focus();
+    })
+    
+    </script>
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="./css/stylesheet.css" />
+    <link rel="stylesheet" href="./css/media.css">
+  </head>
+  <body>
+    
+    <div class="home-container">
+  <div class="burger-menu-container" id="lines-container">
+  <div class="line line1" id="bar1"></div>
+  <div class="line line2" id="bar2"></div>
+  <div class="line line3" id="bar3"></div>
+</div>
+<div class="nav">
+  <ol>
+      
+      <a href="medical-history-copy.html">medical history</a>
+      <a href="sos-contacts.html">SOS contacts</a>
+      <a href="req-comp-for-user.html">my requests</a>
+      <a href="get-in-touch.html">contact us</a>
+      <a style="" href="sign-in.html">log out</a>
+    </ol>
+</div>
+
+<div class="background"></div>
+  <div class="home-header">
+    
+     <a href="profile.html">
+
+       <div class="profile-image"></div>
+     </a>
+   
+  </div>
+  <div class="emergency-section">
+    <h1>keep calm!</h1>
+    <p>Press The Button Below And Help<br> Will Be On The Way</p>
+    <a style="display: flex;justify-content: center;" href="respondersOnTheWay.html">
+    <img src="./images/—Pngtree—vector red warning light_5454124.png" alt="">
+    </a>
+
+
+    </div>
+    <div class="sos-section">
+      
+
+        <i class="fas fa-phone-alt phone-icon "></i>
+      
+      <img class="sos-contact" src="/images/person.jpg" alt="">
+      <img class="sos-contact2" src="/images/person.jpg" alt="">
+      <img class="sos-contact3" src="/images/person.jpg" alt="">
+      <img class="sos-contact4" src="/images/person.jpg" alt="">
+      <img class="sos-contact5" src="/images/person.jpg" alt="">
+    </div>
+  </div>
+</body>
+<script>
+
+const burgerMenuContainer= document.getElementById('lines-container');
+const bar1 = document.getElementById('bar1');
+const bar3 = document.getElementById('bar3');
+const bar2 = document.getElementById('bar2');
+const nav = document.querySelector('.nav');
+const background = document.querySelector('.background');
+
+
+
+
+burgerMenuContainer.addEventListener('click',function(){
+bar1.classList.toggle('line1-transform');
+bar3.classList.toggle('line3-transform');
+bar2.classList.toggle('line2-opacity');
+nav.classList.toggle('nav-display');
+background.classList.toggle('background-display')
+})
+
+const phoneImage = document.querySelector(".phone-icon");
+const contactImage = document.querySelector(".sos-contact");
+const contactImage2 = document.querySelector(".sos-contact2");
+const contactImage3 = document.querySelector(".sos-contact3");
+const contactImage4 = document.querySelector(".sos-contact4");
+const contactImage5 = document.querySelector(".sos-contact5");
+
+phoneImage.addEventListener("click", function () {
+contactImage.classList.toggle("active");
+contactImage2.classList.toggle("active2");
+contactImage3.classList.toggle("active3");
+contactImage4.classList.toggle("active4");
+contactImage5.classList.toggle("active5");
+});
+
+
+
+
+</script>
+</html>

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, minimum-scale=1, maximum-scale=1"
+    />
+    <!-- Font Awsome library -->
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://kit.fontawesome.com/869711923d.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500&family=Work+Sans:wght@200;300;400;500;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <title>Es3afy</title>
+    <!-- icon -->
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="images/logo png.png"
+    />
+    <!-- Js -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <link rel="stylesheet" href="css/stylesheet.css" />
+    <link rel="stylesheet" href="css/media.css" />
+    <!-- script -->
+  </head>
+  <body>
+    <div class="splash-div">
+      <div class="logo-container">
+        <img
+          class="logo animate__animated animate__rotateIn animate__infinite"
+          src="./images/logo png.png"
+        />
+      </div>
+    </div>
+
+    <div class="sign-container">
+      <div class="content-container">
+        <div class="sign-up">
+          <h1 class="sign-up-h1">Sign Up</h1>
+          <label for="name">Username</label>
+          <input name="name" class="custom-input" type="text"/>
+          <input class="custom-input" type="email" placeholder="E-mail" />
+          <input class="custom-input" type="password" placeholder="Password" />
+          <input class="custom-input" type="tel" placeholder="Mobile" />
+          <input class="custom-input" type="checkbox" placeholder="Gender" />
+          <input class="custom-input" type="date" placeholder="Birthday" />
+          <a href="medical-history.html">
+            <button class="button-custom">Sign Up</button>
+          </a>
+        </div>
+      </div>
+      <!-- signin -->
+      <div class="content-container-2">
+        <div class="content-container-3">
+          <div class="sign-in">
+            <h1 class="sign-in-h1">Sign In</h1>
+          </div>
+          <div class="inputs-container">
+            <input class="custom-input" type="email" placeholder="E-mail" />
+            <input
+              class="custom-input"
+              type="password"
+              placeholder="Password"
+            />
+            <a href="home.html">
+              <button class="button-custom">Sign In</button>
+            </a>
+            <a href="ForgetPassword.html" class="forget-password"
+              >forgot your password ?</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+
+    <script>
+      const signInH1 = document.querySelector(".sign-in-h1");
+      const contentContainer2 = document.querySelector(".content-container-2");
+      const SignUpH1 = document.querySelector(".sign-up-h1");
+      const contentContainer = document.querySelector(".content-container");
+
+      signInH1.addEventListener("click", function () {
+        contentContainer2.classList.add("sign-active");
+        signInH1.classList.add("h1-scale");
+        SignUpH1.classList.remove("h1-scale");
+      });
+
+      SignUpH1.addEventListener("click", function () {
+        contentContainer2.classList.remove("sign-active");
+        signInH1.classList.remove("h1-scale");
+        SignUpH1.classList.add("h1-scale");
+      });
+
+      contentContainer.addEventListener("click", function () {
+        contentContainer2.classList.remove("sign-active");
+        signInH1.classList.remove("h1-scale");
+        SignUpH1.classList.add("h1-scale");
+      });
+
+      setTimeout(function () {
+        let viewheight = $(window).height();
+        let viewwidth = $(window).width();
+        let viewport = document.querySelector("meta[name=viewport]");
+        viewport.setAttribute(
+          "content",
+          "height=" +
+            viewheight +
+            "px, width=" +
+            viewwidth +
+            "px, initial-scale=1.0"
+        );
+      }, 300);
+
+     
+      $(window).on("load", function () {
+        $(".splash-div").fadeOut(2000);
+      });
+    </script>
+  </body>
+</html>

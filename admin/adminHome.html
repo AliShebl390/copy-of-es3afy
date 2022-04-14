@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="stylesheet.css" />
+    <link rel="stylesheet" href="../css/media.css">
+  </head>
+  <body>
+      <div class="admin-header">
+            <div class="admin-header-section1">
+        <input class="search-input" type="text">
+        <i class="fas fa-search search-icon"></i>
+            </div>
+        <div class="admin-header-section2">
+            <img src="/images/person.jpg" alt="">
+            <h4>cillian murphy</h4>
+        </div>
+    </div>
+    <div class="admin-sidebar">
+        <div class="sidebar-content">
+            <img src="/images/logo png.png" alt="">
+            <div class="center">
+                <i class="fas fa-home"></i>
+                <i class="fas fa-history"></i>
+                <i class="fas fa-user-plus"></i>
+              </div>
+          </div>
+      </div>
+  <div class="admin-container">  
+            <table class="list" id="employeeList">
+                
+                    <tr>
+                        <th>Full Name</th>
+                        <th>Mobile</th>
+                        <th>ID</th>  
+                        <th>Email</th>
+                        <th>status</th>
+                        <th>Operations</th>
+                    </tr>
+                    <tr>
+                        <td>ahmed yasser</td>
+                        <td>01223342432</td>
+                        <td>555</td>
+                        <td>email@example@gmail.com</td>
+                        <td>active</td>
+                        <td>
+                            <i style="color: green;" class="fas fa-user-edit"></i>
+                            <i style="color: red;" class="fas fa-trash"></i>
+                        </td>
+                    </tr>  
+                    </table>
+        </div>            
+</body>
+<script>
+const searchIcon = document.querySelector('.search-icon')
+const searchInput = document.querySelector('.search-input')
+const searchContainer= document.querySelector('.admin-header-section1')
+searchIcon.addEventListener('click',function(){
+searchContainer.classList.toggle('show')
+searchInput.focus();
+})
+</script>  
+</html>
